@@ -60,7 +60,6 @@ export default function Collage() {
         >
           <span className="eyebrow light">Our moments</span>
           <h2 className="script gold-text collage-title">Captured</h2>
-          <span className="collage-credit">Photographs by Dark Room Photography</span>
         </motion.div>
         {TILES.slice(2).map((t) => <Photo key={t.key} tile={t} progress={scrollYProgress} />)}
       </div>
