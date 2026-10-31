@@ -6,12 +6,13 @@ import { motion, useScroll, useTransform, type MotionValue } from "framer-motion
 
 type Tile = { key: string; src: string; alt: string; pos: string; drift: number; delay: number };
 
+// Grouped by outfit: the red gown first, then the maroon dress.
 const TILES: Tile[] = [
   { key: "a", src: "/images/stables.jpg", alt: "Ashan and Oshini at the doors of The Stables, Chatham Street", pos: "50% 60%", drift: -24, delay: 0 },
-  { key: "b", src: "/images/colonnade.jpg", alt: "Ashan and Oshini among white colonial arches", pos: "50% 55%", drift: 18, delay: 0.15 },
-  { key: "c", src: "/images/bench.jpg", alt: "Ashan and Oshini seated back to back on a stone bench", pos: "40% 70%", drift: -30, delay: 0.3 },
-  { key: "d", src: "/images/steps.jpg", alt: "Ashan and Oshini sitting together on old stone steps", pos: "50% 45%", drift: 26, delay: 0.1 },
-  { key: "e", src: "/images/ledge.jpg", alt: "Ashan and Oshini beneath an arched window", pos: "50% 72%", drift: -16, delay: 0.25 },
+  { key: "b", src: "/images/colonnade.jpg", alt: "Ashan and Oshini among white colonial arches", pos: "50% 60%", drift: 18, delay: 0.15 },
+  { key: "c", src: "/images/bench.jpg", alt: "Ashan and Oshini seated back to back on a stone bench", pos: "40% 70%", drift: -20, delay: 0.3 },
+  { key: "d", src: "/images/steps.jpg", alt: "Ashan and Oshini sitting together on old stone steps", pos: "50% 45%", drift: 22, delay: 0.1 },
+  { key: "e", src: "/images/lighthouse.jpg", alt: "Ashan and Oshini walking hand in hand down the lighthouse steps", pos: "50% 80%", drift: -16, delay: 0.25 },
 ];
 
 function Photo({ tile, progress }: { tile: Tile; progress: MotionValue<number> }) {
@@ -50,7 +51,7 @@ export default function Collage() {
   return (
     <section ref={ref} className="collage" aria-label="Our moments">
       <div className="collage-grid wrap">
-        {TILES.slice(0, 2).map((t) => <Photo key={t.key} tile={t} progress={scrollYProgress} />)}
+        {TILES.slice(0, 3).map((t) => <Photo key={t.key} tile={t} progress={scrollYProgress} />)}
         <motion.div
           className="tile tile-t"
           initial={{ opacity: 0, y: 30 }}
@@ -61,7 +62,7 @@ export default function Collage() {
           <span className="eyebrow light">Our moments</span>
           <h2 className="script gold-text collage-title">Captured</h2>
         </motion.div>
-        {TILES.slice(2).map((t) => <Photo key={t.key} tile={t} progress={scrollYProgress} />)}
+        {TILES.slice(3).map((t) => <Photo key={t.key} tile={t} progress={scrollYProgress} />)}
       </div>
     </section>
   );

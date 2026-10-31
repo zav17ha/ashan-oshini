@@ -104,7 +104,7 @@ export function GoldDust() {
         p.x += p.vx; p.y += p.vy;
         if (p.y < -10) { p.y = H + 10; p.x = rnd(0, W); }
         ctx.globalAlpha = 0.18 + 0.4 * (0.5 + 0.5 * Math.sin(t * 0.0018 + p.ph));
-        ctx.fillStyle = i % 3 ? "#e7c675" : "#fff3d1";
+        ctx.fillStyle = i % 3 ? "#fffaf0" : "#f4dea0";
         ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
       });
       raf = requestAnimationFrame(frame);

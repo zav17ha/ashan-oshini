@@ -10,14 +10,14 @@ import { WEDDING } from "@/lib/wedding";
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const mediaY = useTransform(scrollYProgress, [0, 1], ["0%", "14%"]);
+  const mediaY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
   const textY = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "-35%"]);
   const textO = useTransform(scrollYProgress, [0.1, 0.65], [1, 0]);
 
   return (
     <header ref={ref} className="hero">
       <motion.div className="hero-media" style={{ y: mediaY }}>
-        <Image className="hero-img" src="/images/hero.jpg" alt="Ashan and Oshini smiling together in the golden evening light" fill priority sizes="100vw" />
+        <Image className="hero-img" src="/images/hero-shutters.jpg" alt="Ashan and Oshini by the white shutters in the golden evening light" fill priority quality={90} sizes="100vw" />
       </motion.div>
       <motion.div className="hero-text wrap" style={{ y: textY, opacity: textO }}>
         <p className="eyebrow hero-eyebrow">We are getting married</p>
@@ -74,7 +74,7 @@ export function Letter({ guest }: { guest: string }) {
           <Reveal delay={0.1}><h2 className="script guest-big gold-text">{guest || "Our Beloved Guest"}</h2></Reveal>
           <Reveal delay={0.2}><p className="lead">With hearts full of joy, we invite you to celebrate our wedding and to share in the moment we begin our forever together.</p></Reveal>
           <Reveal delay={0.25}><p className="lead">Your presence would mean the world to us.</p></Reveal>
-          <Reveal delay={0.3}><p className="date-words">Wednesday, the sixteenth of December, two thousand and twenty-six</p></Reveal>
+          <Reveal delay={0.3}><p className="date-words">Wednesday, 16 December 2026</p></Reveal>
           <Reveal delay={0.35}><p className="sign">{WEDDING.groom} &amp; {WEDDING.bride}</p></Reveal>
         </div>
       </div>
@@ -120,7 +120,7 @@ export function Countdown() {
   const units = ["Days", "Hours", "Minutes", "Seconds"];
 
   return (
-    <section className="count block wrap on-dark">
+    <section className="count block wrap">
       <div className="center">
         <Reveal><p className="eyebrow">Counting down to</p></Reveal>
         <Reveal delay={0.1}><h2 className="script gold-text count-title">our forever</h2></Reveal>
@@ -158,7 +158,9 @@ export function Unveil() {
       <div className="unveil-stage">
         <motion.div className="unveil-img" style={{ clipPath }}>
           <motion.div className="unveil-zoom" style={{ scale }}>
-            <Image src="/images/shutters.jpg" alt="Ashan and Oshini by the white shutters in the golden evening light" fill quality={90} sizes="100vw" />
+            {/* Wide screens get the landscape photo; tall phone screens get the portrait. */}
+            <Image className="u-wide" src="/images/arches-landscape.jpg" alt="Ashan leaning on a stone pillar as Oshini sweeps past in her red gown" fill quality={90} sizes="100vw" />
+            <Image className="u-tall" src="/images/portrait-couple.jpg" alt="Ashan and Oshini smiling together in the golden evening light" fill quality={90} sizes="100vw" />
           </motion.div>
         </motion.div>
         <motion.div className="unveil-text wrap" style={{ opacity: textO, y: textY }}>
@@ -268,7 +270,7 @@ export function Farewell({ guest }: { guest: string }) {
         <Reveal delay={0.2} className="tall">
           <div className="frame" ref={ref}>
             <motion.div className="parallax" style={{ y: imgY }}>
-              <Image src="/images/lighthouse.jpg" alt="Ashan and Oshini walking hand in hand down the lighthouse steps" fill sizes="(min-width: 600px) 420px, 84vw" />
+              <Image src="/images/ledge.jpg" alt="Ashan and Oshini beneath an arched window" fill quality={90} sizes="(min-width: 600px) 420px, 84vw" style={{ objectPosition: "50% 72%" }} />
             </motion.div>
           </div>
         </Reveal>

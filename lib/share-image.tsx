@@ -20,31 +20,31 @@ export async function renderShareImage(guest: string) {
 
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", background: "#3a0711" }}>
+      <div style={{ width: "100%", height: "100%", display: "flex", background: "#c9a24e" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={photoSrc} width={480} height={630} style={{ objectFit: "cover" }} alt="" />
         <div
           style={{
             flex: 1, display: "flex", padding: 34,
-            background: "radial-gradient(circle at 50% 40%, #7e1b2d 0%, #3a0711 70%)",
+            background: "linear-gradient(135deg, #efd89c 0%, #d4b062 30%, #bb9443 60%, #dfc077 100%)",
           }}
         >
           <div
             style={{
               flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-              border: "2px solid #c9a24e",
+              border: "2px solid #5b0f1d",
               textAlign: "center", padding: "0 30px",
             }}
           >
-            <div style={{ fontFamily: "Cinzel", fontSize: 22, letterSpacing: 7, color: "#c9a24e" }}>
+            <div style={{ fontFamily: "Cinzel", fontSize: 22, letterSpacing: 7, color: "#5b0f1d" }}>
               A WEDDING INVITATION FOR
             </div>
-            <div style={{ fontFamily: "Pinyon, Sinhala", fontSize: nameSize, color: "#f4dea0", lineHeight: 1.2, marginTop: 18 }}>
+            <div style={{ fontFamily: "Pinyon, Sinhala", fontSize: nameSize, color: "#4a0b17", lineHeight: 1.2, marginTop: 18 }}>
               {name}
             </div>
-            <div style={{ width: 220, height: 1, background: "#c9a24e", margin: "26px 0 20px" }} />
-            <div style={{ fontFamily: "Pinyon", fontSize: 54, color: "#fbf6ec" }}>Ashan &amp; Oshini</div>
-            <div style={{ fontFamily: "Cinzel", fontSize: 26, letterSpacing: 8, color: "#c9a24e", marginTop: 14 }}>
+            <div style={{ width: 220, height: 1, background: "#5b0f1d", margin: "26px 0 20px" }} />
+            <div style={{ fontFamily: "Pinyon", fontSize: 54, color: "#5b0f1d" }}>Ashan &amp; Oshini</div>
+            <div style={{ fontFamily: "Cinzel", fontSize: 26, letterSpacing: 8, color: "#5b0f1d", marginTop: 14 }}>
               16 · 12 · 2026
             </div>
           </div>
