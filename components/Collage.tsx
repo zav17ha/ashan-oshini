@@ -12,7 +12,7 @@ const TILES: Tile[] = [
   { key: "b", src: "/images/colonnade.jpg", alt: "Ashan and Oshini among white colonial arches", pos: "50% 60%", drift: 18, delay: 0.15 },
   { key: "c", src: "/images/bench.jpg", alt: "Ashan and Oshini seated back to back on a stone bench", pos: "40% 70%", drift: -20, delay: 0.3 },
   { key: "d", src: "/images/street-walk.jpg", alt: "Ashan and Oshini walking arm in arm past The Stables", pos: "55% 72%", drift: 22, delay: 0.1 },
-  { key: "e", src: "/images/shoulder-rest.jpg", alt: "Oshini resting her head on Ashan's shoulder, eyes closed and smiling", pos: "62% 26%", drift: -16, delay: 0.25 },
+  { key: "e", src: "/images/colonnade-lean.jpg", alt: "Oshini leaning on a white pillar with Ashan beside her under the arched colonnade", pos: "40% 90%", drift: -16, delay: 0.25 },
 ];
 
 function Photo({ tile, progress }: { tile: Tile; progress: MotionValue<number> }) {
